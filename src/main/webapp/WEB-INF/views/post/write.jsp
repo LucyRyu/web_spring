@@ -34,8 +34,8 @@
                     <h3 class="masthead-brand">Lucy</h3>
                     <nav>
                         <ul class="nav masthead-nav">
-                            <li><a href="#">회원가입</a></li>
-                            <li class="active"><a href="#">글쓰기</a></li>
+                            <li><a href="/member/signUp">회원가입</a></li>
+                            <li class="active"><a href="/post/write">글쓰기</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -47,17 +47,18 @@
 
                 <form class="form-horizontal" action="/post/write" method="post">
 
+
                     <div class="form-group">
                         <label class="col-sm-2 control-label">제목</label>
                         <div class="col-sm-10">
-                            <input type="text" id="title" class="form-control" placeholder="제목을 입력하세요." required autofocus>
+                            <input type="text" id="title" name="title" class="form-control" placeholder="제목을 입력하세요." required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">내용</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="3" id="content" rplaceholder="내용을 입력하세요." equired></textarea>
+                            <textarea class="form-control" name="content" rows="3" id="content" placeholder="내용을 입력하세요." equired></textarea>
                         </div>
                     </div>
 
@@ -72,7 +73,7 @@
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                    <p>@ <a href="https://github.com/LucyRyu/web_spring">GitHub/Lucy</a>, by <a href="#">@Lucy</a>.</p>
                 </div>
             </div>
 

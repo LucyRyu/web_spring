@@ -36,8 +36,8 @@
                     <h3 class="masthead-brand">Lucy</h3>
                     <nav>
                         <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">회원가입</a></li>
-                            <li><a href="#">글쓰기</a></li>
+                            <li class="active"><a href="/member/signUp">회원가입</a></li>
+                            <li><a href="/post/write">글쓰기</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -48,16 +48,16 @@
                 <form class="form-signin" action="/member/signUp" method="post">
                     <h2 class="form-signin-heading">멤버 등록 화면입니다</h2>
 
-                    <label for="inputUserId" class="sr-only">ID를 입력하세요</label>
-                    <input type="text" id="inputUserId" class="form-control" placeholder="UserId" required autofocus>
+                    <label for="userId" class="sr-only">ID를 입력하세요</label>
+                    <input type="text" name="userId" id="userId" class="form-control" placeholder="UserId" required autofocus>
                     <br>
 
-                    <label for="inputPassword" class="sr-only">Password를 입력하세요</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <label for="password" class="sr-only">Password를 입력하세요</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                     <br>
 
-                    <label for="inputEmail" class="sr-only">Email을 입력하세요</label>
-                    <input type="password" id="inputEmail" class="form-control" placeholder="Email" required>
+                    <label for="email" class="sr-only">Email을 입력하세요</label>
+                    <input type="text" name="email" id="email" class="form-control" placeholder="Email" required>
                     <br>
 
 
@@ -68,7 +68,7 @@
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                    <p>@ <a href="https://github.com/LucyRyu/web_spring">GitHub/Lucy</a>, by <a href="#">@Lucy</a>.</p>
                 </div>
             </div>
 

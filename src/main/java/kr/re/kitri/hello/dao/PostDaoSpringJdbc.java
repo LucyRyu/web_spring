@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,14 +20,12 @@ public class PostDaoSpringJdbc implements PostDao {
 
     @Override
     public void insertPost(Post post) {
-        String query = "INSERT INTO post (post_seq, title, content, write_date, member_seq) " +
-                "VALUES (?,?,?,?,?);";
+        String query = "INSERT INTO post (title, content, write_date,member_seq) " +
+                "VALUES (?,?,now(),1);";
 
         jdbcTemplate.update(query,
                 post.getTitle(),
-                post.getContent(),
-                post.getWriteDate(),
-                post.getMemberSeq()
+                post.getContent()
         );
     }
 

@@ -27,16 +27,13 @@ public class MemberDaoSpringJdbc implements MemberDao {
     }
 
     public void CreateMember(Member member) {
-        String query = "INSERT INTO member(member_seq, userid, password, email, point, join_date)\n" +
-                "VALUES (?,?,?);";
+        String query = "INSERT INTO member(userid, password, email, join_date)" +
+                "VALUES (?,?,?,now());";
 
         jdbcTemplate.update(query,
-                member.setMemberSeq(1),
                 member.getUserId(),
                 member.getPassword(),
-                member.getEmail(),
-                member.setPoint(0),
-                member.setJoinDate(Date.from(Instant.now()));
+                member.getEmail()
         );
     }
 

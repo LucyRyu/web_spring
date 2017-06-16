@@ -36,8 +36,8 @@
                     <h3 class="masthead-brand">Lucy</h3>
                     <nav>
                         <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">회원가입</a></li>
-                            <li><a href="#">글쓰기</a></li>
+                            <li class="active"><a href="/member/signUp">회원가입</a></li>
+                            <li><a href="/post/write">글쓰기</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -53,30 +53,18 @@
                     <div class="form-group">
                         <label class="col-sm-4 control-label">ID</label>
                         <div class="col-sm-8">
-                            <p class="form-control-static">member.userId</p>
+                            <p class="form-control-static">${member.userId}</p>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-4 control-label">EMAIL</label>
                         <div class="col-sm-8">
-                            <p class="form-control-static">member.email</p>
+                            <p class="form-control-static">${member.email}</p>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label">POINT</label>
-                        <div class="col-sm-8">
-                            <p class="form-control-static">member.point</p>
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label">가입날짜</label>
-                        <div class="col-sm-8">
-                            <p class="form-control-static">member.join_date</p>
-                        </div>
-                    </div>
 
                 </form>
 
@@ -89,8 +77,7 @@
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a
-                            href="https://twitter.com/mdo">@mdo</a>.</p>
+                    <p>@ <a href="https://github.com/LucyRyu/web_spring">GitHub/Lucy</a>, by <a href="#">@Lucy</a>.</p>
                 </div>
             </div>
 

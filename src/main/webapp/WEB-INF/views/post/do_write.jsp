@@ -34,8 +34,8 @@
                     <h3 class="masthead-brand">Lucy</h3>
                     <nav>
                         <ul class="nav masthead-nav">
-                            <li><a href="#">회원가입</a></li>
-                            <li class="active"><a href="#">글쓰기</a></li>
+                            <li><a href="/member/signUp">회원가입</a></li>
+                            <li class="active"><a href="/post/write">글쓰기</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -51,30 +51,17 @@
                     <div class="form-group">
                         <label class="col-sm-4 control-label">제목</label>
                         <div class="col-sm-8">
-                            <p class="form-control-static">ㅋ</p>
+                            <p class="form-control-static">${post.title}</p>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-4 control-label">내용</label>
                         <div class="col-sm-8">
-                            <p class="form-control-static">ㅋ</p>
+                            <p class="form-control-static">${post.content}</p>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label">작성일</label>
-                        <div class="col-sm-8">
-                            <p class="form-control-static">ㅋ</p>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label">포인트 점수</label>
-                        <div class="col-sm-8">
-                            <p class="form-control-static">ㅋ</p>
-                        </div>
-                    </div>
 
                 </form>
 
@@ -87,7 +74,7 @@
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                    <p>@ <a href="https://github.com/LucyRyu/web_spring">GitHub/Lucy</a>, by <a href="#">@Lucy</a>.</p>
                 </div>
             </div>
 
