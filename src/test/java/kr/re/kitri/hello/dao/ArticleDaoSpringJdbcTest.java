@@ -1,11 +1,14 @@
 package kr.re.kitri.hello.dao;
 
 import kr.re.kitri.hello.model.Article;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.List;
 
 /**
  * Created by danawacomputer on 2017-06-16.
@@ -32,4 +35,21 @@ public class ArticleDaoSpringJdbcTest {
                 article.setContent("test case");
                 articleDao.insertArticle(article);
         };
+
+
+        @Test
+        public void selectArticleById(){
+                Article article = articleDao.selectArticleById("3");
+                System.out.println(article);
+                Assert.assertTrue(article.getArticleId().equals("3"));
+        }
+
+
+        @Test
+        public void selectAllArticles(){
+                List<Article> list = articleDao.selectAllArticles();
+                System.out.println(list);
+                Assert.assertTrue(list.size() > 2);
+
+        }
 }
