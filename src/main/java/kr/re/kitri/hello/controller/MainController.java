@@ -8,7 +8,7 @@ public class MainController {
 
     @RequestMapping("/")
     public String index() {
-        return "redirect:bbs/";
+        return "redirect:member/signUp";
     }
 
     @RequestMapping("/bs-sample")
