@@ -1,6 +1,5 @@
 package kr.re.kitri.hello.controller;
 
-import kr.re.kitri.hello.common.MockArticle;
 import kr.re.kitri.hello.model.Article;
 import kr.re.kitri.hello.service.BbsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,12 +42,40 @@ public class BbsController {
                 .addObject("list",list);
     }
 
+    /*
+    * 글 전체보기 API 버전
+    * /bbs/api .. 전체보기
+    *
+    * 1. @ResponseBody
+    * 2. 리턴타입을 List<Article>을 리턴한다. 그러면 JSON으로 반환해 줄 것이다.
+    */
+
+    @RequestMapping("/api")
+    @ResponseBody
+    public List<Article> viewAllApi(){
+        List<Article> list = service.getArticles();
+
+        return list;
+    }
+
+
+    /*
+    * 글 상세보기
+    * @param articleId
+     */
     @RequestMapping("/{articleId}")
     public ModelAndView viewDetail(@PathVariable String articleId) {
 
         Article article = service.viewArticle(articleId);
         return new ModelAndView("bbs/view_detail")
                 .addObject("article",article);
+    }
+
+    @RequestMapping("/{articleId}/api")
+    @ResponseBody // JSON으로 반환하겠다는 의미
+    public Article viewDetailApi(@PathVariable String articleId){
+        Article article = service.viewArticle(articleId);
+        return article;
     }
 
     @GetMapping("/write")
@@ -83,6 +110,13 @@ public class BbsController {
         return mav;
     }
 
+    @PostMapping("/write/api")
+    public String doWriteApi(@RequestBody Article article){
+
+        service.registArticle(article);
+        return "bbs/view_all";
+    }
+
     /*@RequestMapping("/write/do")
     public String doWrite(HttpServletRequest request) {
 
@@ -98,5 +132,7 @@ public class BbsController {
 
         return "do_write";
     }*/
+
+
 }
 

@@ -3,11 +3,8 @@ package kr.re.kitri.hello.dao;
 import kr.re.kitri.hello.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -104,4 +101,40 @@ public class ArticleDaoSpringJdbc implements ArticleDao {
 
     }
 
+    //todo: 글수정
+    @Override
+    public void modifyArticleById(String articleId, Article article) {
+        String query = "UPDATE article\n" +
+                "SET title=?, author=?, content=?\n" +
+                "WHERE article_id=?;";
+
+
+        jdbcTemplate.update(query,
+
+                article.getTitle(),
+                article.getAuthor(),
+                article.getContent(),
+                Integer.parseInt(articleId)
+
+        );
+
+
+    }
+
+
+    //todo: 글 삭제
+    @Override
+    public Article deleteArticleById(String articleId) {
+        String query = "DELETE FROM article\n" +
+                "WHERE article_id=?;";
+
+        return jdbcTemplate.queryForObject(query,
+                (rs, i) -> {
+                    Article article = new Article();
+                    article.setArticleId(rs.getString(1));
+
+                    return article;
+                }, Integer.parseInt(articleId));
+
+    }
 }

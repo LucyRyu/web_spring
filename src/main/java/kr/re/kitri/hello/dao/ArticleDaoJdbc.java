@@ -2,7 +2,6 @@ package kr.re.kitri.hello.dao;
 
 import kr.re.kitri.hello.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -16,7 +15,7 @@ import java.util.List;
  * Created by danawacomputer on 2017-06-14.
  */
 
-public class ArticleDaoJdbc implements ArticleDao{
+public class ArticleDaoJdbc{
 
     @Autowired
     private DataSource dataSource;

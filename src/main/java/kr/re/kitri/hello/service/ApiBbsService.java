@@ -1,7 +1,6 @@
 package kr.re.kitri.hello.service;
 
 import kr.re.kitri.hello.dao.ArticleDao;
-import kr.re.kitri.hello.dao.ArticleDaoJdbc;
 import kr.re.kitri.hello.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +12,7 @@ import java.util.List;
  * 각 메소드는 해당 기능을 수행한다.
  */
 @Service
-public class BbsService {
-
+public class ApiBbsService {
     @Autowired
     private ArticleDao dao;
 
@@ -43,5 +41,20 @@ public class BbsService {
         return dao.selectAllArticles();
     }
 
-}
+    /**
+     * 글 수정
+     * */
+    public void modifyArticleId(String articleId, Article article) {
+        dao.modifyArticleById(articleId,article);
+    }
 
+
+    /**
+     * 글 삭제
+     * */
+    public Article deleteArticleId(String articleId){
+        return dao.deleteArticleById(articleId);
+    }
+
+
+}
